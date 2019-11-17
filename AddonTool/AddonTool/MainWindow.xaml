@@ -5,8 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AddonTool"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="536.494" Width="768" ResizeMode="NoResize">
     <Grid>
-        
+        <Grid.RowDefinitions>
+        </Grid.RowDefinitions>
+        <Grid Height="auto" Width="auto"  Grid.RowSpan="2">
+            <Button x:Name="updateButton" Content="更新"  Width="128" Height="54" Margin="577,420,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Background="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}"/>
+            <ProgressBar HorizontalAlignment="Left" Height="24" Margin="51,438,0,0" VerticalAlignment="Top" Width="494"/>
+        </Grid>
+
     </Grid>
 </Window>
