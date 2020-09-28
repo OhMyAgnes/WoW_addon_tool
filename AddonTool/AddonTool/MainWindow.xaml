@@ -6,15 +6,41 @@
         xmlns:local="clr-namespace:AddonTool"
         xmlns:DMSkin ="clr-namespace:DMSkin;assembly=DMSkin"
         mc:Ignorable="d"
-        Title="MainWindow" Height="536.494" Width="768" ResizeMode="NoResize"
-                     >
+        Title="MainWindow" Height="512" Width="768" ResizeMode="NoResize"
+        AllowsTransparency="False" WindowStyle="None" 
+        CaptionBackground="#ffffff"
+        CaptionHeight="50"
+        Foreground="White"
+        Style="{StaticResource DMSkinWindowStyle}"
+        SystemButtonCloseOverColor="Red"
+        SystemButtonForeground="#666666"
+        SystemButtonOverColor="#10000000"
+        SystemButtonSize="50"
+        WindowStartupLocation="CenterScreen"
+        Loaded="DMSkinWindow_Loaded" Closing="DMSkinWindow_Closing" >
+
     <Grid>
-        <Grid.RowDefinitions>
-        </Grid.RowDefinitions>
-        <Grid Height="auto" Width="auto"  Grid.RowSpan="2">
-            <Button x:Name="updateButton" Content="更新"  Width="128" Height="54" Margin="577,420,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Background="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}"/>
-            <ProgressBar HorizontalAlignment="Left" Height="24" Margin="51,438,0,0" VerticalAlignment="Top" Width="494"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0" Background="#FFF2F2F1">
+            <RadioButton x:Name="MainPage" Style="{StaticResource    MyRadio }"   FontFamily="{StaticResource FontTitle}" FontSize="16" Content="插件更新" Tag="&#xe670;" Height="60" Click="ChangeView_Click"/>
+            <RadioButton x:Name="Alignment" Style="{StaticResource  MyRadio }"  FontFamily="{StaticResource FontTitle}" FontSize="16" Content="配置迁移" Tag="&#xe74b;" Height="60" Click="ChangeView_Click" />
+            <!--<RadioButton x:Name="SystemPage" Style="{StaticResource  MyRadio }" FontFamily="{StaticResource FontTitle}" FontSize="16" Content="拆图"  Tag="&#xe7f8;" Height="60" Click="ChangeView_Click" />
+            <RadioButton x:Name="TestPage" Style="{StaticResource  MyRadio }"  FontFamily="{StaticResource FontTitle}" FontSize="16" Content="分析" Tag="&#xe602;" Height="60" Click="ChangeView_Click" />
+            <RadioButton x:Name="TotalPage" Style="{StaticResource  MyRadio }"  FontFamily="{StaticResource FontTitle}" FontSize="16" Content="XXX" Tag="&#xe61e;" Height="60" Click="ChangeView_Click" />
+            <Border Height="1" Width="140" Background="#E6E6E6"  />
+            <RadioButton x:Name="FunctionPage" Style="{StaticResource MyRadio}"  FontFamily="{StaticResource FontTitle}" FontSize="16" Content="操作指南" Tag="&#xe617;" Height="60" Click="ChangeView_Click" />
+            <RadioButton x:Name="CompanyPage" Style="{StaticResource MyRadio}" FontFamily="{StaticResource FontTitle}" FontSize="16" Content="公司简介" Tag="&#xe605;" Height="60" Click="ChangeView_Click"/>-->
+        </StackPanel>
+
+        <Grid Grid.Column="1" Margin="10,0,0,0">
+            <Frame x:Name="Frame" NavigationUIVisibility="Hidden" Navigating="Frame_Navigating"/>
         </Grid>
 
+
     </Grid>
+    
 </DMSkin:DMSkinWindow>
