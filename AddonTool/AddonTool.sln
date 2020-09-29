@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30517.126
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddonTool", "AddonTool\AddonTool.csproj", "{3E92EC6C-AF74-49BE-A053-4315179AA8AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataIO", "DataIO\DataIO.csproj", "{0AC6147B-9CF5-42E1-8727-9FF98CCB8637}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,8 +23,19 @@ Global
 		{3E92EC6C-AF74-49BE-A053-4315179AA8AF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3E92EC6C-AF74-49BE-A053-4315179AA8AF}.Release|x64.ActiveCfg = Release|x64
 		{3E92EC6C-AF74-49BE-A053-4315179AA8AF}.Release|x64.Build.0 = Release|x64
+		{0AC6147B-9CF5-42E1-8727-9FF98CCB8637}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AC6147B-9CF5-42E1-8727-9FF98CCB8637}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AC6147B-9CF5-42E1-8727-9FF98CCB8637}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{0AC6147B-9CF5-42E1-8727-9FF98CCB8637}.Debug|x64.Build.0 = Debug|Any CPU
+		{0AC6147B-9CF5-42E1-8727-9FF98CCB8637}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AC6147B-9CF5-42E1-8727-9FF98CCB8637}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AC6147B-9CF5-42E1-8727-9FF98CCB8637}.Release|x64.ActiveCfg = Release|Any CPU
+		{0AC6147B-9CF5-42E1-8727-9FF98CCB8637}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BE1932B6-990B-4D8C-8636-912B095C1542}
 	EndGlobalSection
 EndGlobal

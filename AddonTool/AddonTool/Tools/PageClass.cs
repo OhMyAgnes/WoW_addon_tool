@@ -9,19 +9,19 @@ namespace AddonTool
     public static class PageClass
     {
         //界面
-        public static MainPage mainPage = new MainPage();
-        //public static AlignmentPage aligment = new AlignmentPage();
+        public static AddonsView addonsView = new AddonsView();
+        //public static WTFMoveViewPage aligment = new WTFMoveViewPage();
 
         //public static SystemPage systemPage = new SystemPage();
-        //public static TestPage testPage = new TestPage();
+        public static SettingView settingView = new SettingView();
 
 
 
         //加载次数
-        public static UInt16 LoadMainPageCount;
-        public static UInt16 aligmentPageCount;
+        public static UInt16 LoadAddonsViewCount;
+        public static UInt16 LoadAligmentPageCount;
         //public static UInt16 systemPageCount;
-        //public static UInt16 testPageCount;
+        public static UInt16 LoadSettingViewCount;
 
     }
 }

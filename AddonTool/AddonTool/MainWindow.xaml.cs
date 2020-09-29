@@ -27,8 +27,8 @@ namespace AddonTool
         {
             Naviga = true;
 
-            MainPage.IsChecked = true;
-            ChangeView_Click(MainPage, e);
+            AddonsView.IsChecked = true;
+            ChangeView_Click(AddonsView, e);
         }
 
         private void ChangeView_Click(object sender, RoutedEventArgs e)
@@ -39,11 +39,11 @@ namespace AddonTool
             Naviga = true;
             switch (rb.Name.ToString())
             {
-                case "MainPage":
-                    Frame.Content = PageClass.mainPage;
-                    PageClass.LoadMainPageCount++;
+                case "AddonsView":
+                    Frame.Content = PageClass.addonsView;
+                    PageClass.LoadAddonsViewCount++;
                     break;
-                //case "Alignment":
+                //case "WTFMoveView":
                 //    Frame.Content = PageClass.aligment;
                 //    PageClass.aligmentPageCount++;
                 //    break;
@@ -51,10 +51,10 @@ namespace AddonTool
                 //    Frame.Content = pageClass.systemPage;
                 //    pageClass.systemPageCount++;
                 //    break;
-                //case "TestPage":
-                //    Frame.Content = pageClass.testPage;
-                //    pageClass.testPageCount++;
-                //    break;
+                case "SettingView":
+                    Frame.Content = PageClass.settingView;
+                    PageClass.LoadSettingViewCount++;
+                    break;
             }
         }
         private void Frame_Navigating(object sender, NavigatingCancelEventArgs e)

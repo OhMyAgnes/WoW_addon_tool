@@ -1,0 +1,23 @@
+﻿<Page x:Class="AddonTool.SettingView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"     
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AddonTool"
+      xmlns:cal="clr-namespace:Caliburn.Micro;assembly=Caliburn.Micro"
+      mc:Ignorable="d" 
+      d:DesignHeight="512" d:DesignWidth="618" Loaded="SettingView_Loaded" LostFocus="SettingView_LostFocus">
+    <Grid>
+        <Grid>
+
+            <StackPanel Margin="0,0,0,318" Height="28" VerticalAlignment="Bottom"  >
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="80,0,0,0" >
+                    <TextBlock Text="游戏路径" Margin="10,5,0,5" FontSize="14" />
+                    <TextBox x:Name="TbFolderPath" Background="Gray"  FontSize="14" Width="300" Style="{StaticResource TextBoxFrameless}" Text="{Binding Path=FolderPath}"/>
+                    <Button x:Name="BtShowFolderDialog"  Width="40"  FontSize="14" Content="..." Height="20" Click="BtChoseFolder_Click"/>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+
+    </Grid>
+</Page>
