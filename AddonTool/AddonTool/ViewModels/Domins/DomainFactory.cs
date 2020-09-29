@@ -13,5 +13,10 @@ namespace AddonTool.ViewModels.Domins
         {
             return new LocalSettingsManager();
         }
+
+        public Command CreateCommand(Action<object> execute)
+        {
+            return new Command(execute);
+        }
     }
 }

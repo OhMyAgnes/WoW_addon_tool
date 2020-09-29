@@ -3,18 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DataIO.Addons.Foundation.Concrete;
+using DataIO.Addons.Models.Concrete;
 using DataIO.Addons.Foundation;
-using DataIO.Addons.Models;
 using DataIO.General;
+using DataIO.General.Concrete;
 
 namespace DataIO.Addons.Controller.Concrete
 {
-    class AddonController : IAddonController
+    public class AddonController
     {
         private FoundationFactory foundationFactory;
-        private IObjectBuilder objectBuilder;
-        private IAddonIO addonIO;
-        private IFileSystem fileSystem;
+        private ObjectBuilder objectBuilder;
+        private AddonIO addonIO;
+        private FileSystem fileSystem;
 
         public AddonController()
         {
@@ -34,7 +36,7 @@ namespace DataIO.Addons.Controller.Concrete
                 return null;
         }
 
-        public List<IAddonInfo> GetAddons(string folderPath)
+        public List<AddonInfo> GetAddons(string folderPath)
         {
             try
             {
@@ -47,14 +49,14 @@ namespace DataIO.Addons.Controller.Concrete
             }
         }
 
-        public void RemoveAddon(IAddonInfo addon)
+        public void RemoveAddon(AddonInfo addon)
         {
             fileSystem.DeleteDirectory(addon.DirectoryPath);
         }
 
-        public void RemoveAddons(IEnumerable<IAddonInfo> addons)
+        public void RemoveAddons(IEnumerable<AddonInfo> addons)
         {
-            foreach (IAddonInfo addon in addons)
+            foreach (AddonInfo addon in addons)
             {
                 fileSystem.DeleteDirectory(addon.DirectoryPath);
             }

@@ -6,7 +6,7 @@ namespace DataIO.Addons.Controller
 {
     public class AddonsControllerFactory
     {
-        public IAddonController CreateAddonController()
+        public AddonController CreateAddonController()
         {
             return new AddonController();
         }

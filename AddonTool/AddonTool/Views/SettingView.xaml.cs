@@ -9,8 +9,9 @@ using System.IO;
 using MaterialDesignThemes.Wpf;
 using System.Windows.Forms;
 using System;
-using DataIO.Addons.Controller;
+using DataIO.Addons.Controller.Concrete;
 using AddonTool.ViewModels.Domins.Concrete;
+using DataIO.Addons.Controller;
 
 namespace AddonTool
 {
@@ -32,8 +33,12 @@ namespace AddonTool
         private DomainFactory domainFactory = new DomainFactory();
         private ISettingsManager settingsManager;
 
-        IAddonController addonController;
+        AddonController addonController;
         FolderClass FolderClass;
+
+
+
+
 
         private void SettingView_LostFocus(object sender, RoutedEventArgs e)
         {

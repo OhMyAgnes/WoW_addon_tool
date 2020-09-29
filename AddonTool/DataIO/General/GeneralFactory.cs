@@ -7,7 +7,7 @@ namespace DataIO.General
 {
     public class GeneralFactory
     {
-        public IFileSystem CreateFileSystem()
+        public FileSystem CreateFileSystem()
         {
             return new FileSystem();
         }

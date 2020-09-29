@@ -7,12 +7,12 @@ namespace DataIO.Addons.Foundation
 {
     class FoundationFactory
     {
-        public IAddonIO CreateAddonIO()
+        public AddonIO CreateAddonIO()
         {
             return new AddonIO();
         }
 
-        public IObjectBuilder CreateObjectBuilder()
+        public ObjectBuilder CreateObjectBuilder()
         {
             return new ObjectBuilder();
         }

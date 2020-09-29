@@ -105,6 +105,7 @@
     <Compile Include="Tools\DMTabItem.cs" />
     <Compile Include="Tools\PageClass.cs" />
     <Compile Include="Tools\WebAPIs.cs" />
+    <Compile Include="ViewModels\Domins\Concrete\Command.cs" />
     <Compile Include="ViewModels\Domins\Concrete\FolderClass.cs" />
     <Compile Include="ViewModels\Domins\Concrete\LocalSettingsManager.cs" />
     <Compile Include="ViewModels\Domins\Concrete\UIPropertyChanged.cs" />

@@ -1,4 +1,5 @@
-﻿using DataIO.Addons.Models;
+﻿using DataIO.Addons.Models.Concrete;
+using DataIO.Addons.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,16 +9,16 @@ using System.Threading.Tasks;
 
 namespace DataIO.Addons.Foundation.Concrete
 {
-    class ObjectBuilder : IObjectBuilder
+    public class ObjectBuilder
     {
-        public List<IAddonInfo> GetAddonInfo(IEnumerable<Dictionary<string, string>> metaData)
+        public List<AddonInfo> GetAddonInfo(IEnumerable<Dictionary<string, string>> metaData)
         {
 
-            List<IAddonInfo> result = new List<IAddonInfo>();
+            List<AddonInfo> result = new List<AddonInfo>();
 
             foreach (var addon in metaData)
             {
-                IAddonInfo newAddonInfo = null;
+                AddonInfo newAddonInfo = null;
 
                 //If the supplied data doesn't comply with the currently implementet standard for metadata, we skip the addon. 
                 try
@@ -36,7 +37,7 @@ namespace DataIO.Addons.Foundation.Concrete
         }
 
         //Trims, verifies and converts all the data to the correct formats and returns an IAddonInfo.
-        private IAddonInfo ConvertToAddonInfo(Dictionary<string, string> addon)
+        private AddonInfo ConvertToAddonInfo(Dictionary<string, string> addon)
         {
             ModelFactory factory = new ModelFactory();
 
@@ -62,16 +63,19 @@ namespace DataIO.Addons.Foundation.Concrete
             //make sure the version has the correct format. 
             //some versions includes codenames like: "1.1.1 (Kangoroo)". Other are formattet differently, for examble: V1.1.1
             //this regex match would return "1.1.1"
-            Version version = null;
-            if (tmpVersion != null)
-            {
-                string versionString = Regex.Match(tmpVersion, @"\d+(?:\.)\d+(?:\.)\d+").Value;
+            string @version = tmpVersion;
+            //Version @version = null;
+            //if (tmpVersion != null)
+            //{
+            //    string versionString = Regex.Match(tmpVersion, @"\d+(?:\.)\d+(?:\.)\d+").Value;
 
-                int missingVersionNumbers = 3 - versionString.Split(',').Length;
+            //    int missingVersionNumbers = 3 - versionString.Split(',').Length;
 
-                for (int i = missingVersionNumbers; i >= 0; i--)
-                    versionString += ".0";
-            }
+            //    for (int i = missingVersionNumbers; i >= 0; i--)
+            //        versionString += ".0";
+
+            //    @version = new Version(Convert.ToInt32(versionString.Substring(0, 1)), Convert.ToInt32(versionString.Substring(1, 2)), Convert.ToInt32(versionString.Substring(3, 2))); ;
+            //}
 
             Version @interface = null;
             if (tmpInterface != null)
@@ -95,7 +99,7 @@ namespace DataIO.Addons.Foundation.Concrete
             Uri website;
             Uri.TryCreate(tmpWebsite, UriKind.Absolute, out website);
 
-            IAddonInfo newAddonInfo =
+            AddonInfo newAddonInfo =
                 factory.CreateAddonInfo(
                     title,
                     description,

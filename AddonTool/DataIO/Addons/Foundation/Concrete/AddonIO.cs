@@ -7,12 +7,13 @@ using DataIO.Addons.Models;
 using System.IO;
 using System.Text.RegularExpressions;
 using DataIO.General;
+using DataIO.General.Concrete;
 
 namespace DataIO.Addons.Foundation.Concrete
 {
-    class AddonIO : IAddonIO
+    class AddonIO
     {
-        IFileSystem fileSystem;
+        FileSystem fileSystem;
 
         public AddonIO()
         {

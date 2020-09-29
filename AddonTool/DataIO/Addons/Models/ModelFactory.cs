@@ -7,7 +7,7 @@ namespace DataIO.Addons.Models
 {
     class ModelFactory
     {
-        public IAddonInfo CreateAddonInfo(string title, string description, string author, Version @interface, Version version, string defaultState, string[] requiredDependencies, string[] savedVariables, Uri website, string email, string category, string directoryPath)
+        public AddonInfo CreateAddonInfo(string title, string description, string author, Version @interface, string version, string defaultState, string[] requiredDependencies, string[] savedVariables, Uri website, string email, string category, string directoryPath)
         {
             return new AddonInfo()
             {

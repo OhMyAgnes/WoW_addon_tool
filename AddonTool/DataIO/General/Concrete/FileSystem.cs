@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DataIO.General.Concrete
 {
-    public class FileSystem : IFileSystem
+    public class FileSystem
     {
         public void CopyDirectory(string source, string target)
         {

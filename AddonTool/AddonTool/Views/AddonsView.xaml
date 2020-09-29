@@ -26,33 +26,14 @@
                 </StackPanel>
             </StackPanel>
 
-            <ListView Margin="1,5,5,0"  ItemContainerStyle="{StaticResource ListViewItemStyle}"  Grid.Row="1"  x:Name="ImageListView" FontSize="14" ScrollViewer.HorizontalScrollBarVisibility="Auto" BorderThickness="1" HorizontalContentAlignment="Center" Foreground="#FF040E29"  GridViewColumnHeader.Click="GridViewColumnHeader_Click" AlternationCount="2" SelectionChanged="ImageListView_SelectionChanged">
+            <ListView Margin="1,5,5,0"  ItemContainerStyle="{StaticResource ListViewItemStyle}"  Grid.Row="1"  x:Name="AddonListView" FontSize="10" ScrollViewer.HorizontalScrollBarVisibility="Auto" BorderThickness="1" HorizontalContentAlignment="Left" Foreground="#FF040E29"  GridViewColumnHeader.Click="GridViewColumnHeader_Click" AlternationCount="2" SelectionChanged="ImageListView_SelectionChanged">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn  Header="序号" Width="40" DisplayMemberBinding="{Binding Path=DefectIndex}" />
-                        <GridViewColumn  Header="检测时间 "  Width="200"  DisplayMemberBinding="{Binding Path=DataGenTimer ,StringFormat={}{0:yyyy-MM-dd HH:mm:ss:fff}}"/>
-                        <GridViewColumn  Header="图像索引" Width="100" DisplayMemberBinding="{Binding Path=ImageIndex}" />
-                        <GridViewColumn  Header="缺陷名称" Width="100" DisplayMemberBinding="{Binding Path=classification}"/>
-                        <GridViewColumn Header="判定结果" Width="80" DisplayMemberBinding="{Binding Path=judgement}"/>
-                        <GridViewColumn  Header="检测参数名称" Width="200" DisplayMemberBinding="{Binding Path= DefectType}"/>
-                        <GridViewColumn  Header="图像坐标X(PIX)" Width="120" DisplayMemberBinding="{Binding Path=centerX}" />
-                        <GridViewColumn  Header="图像坐标Y(PIX)" Width="120" DisplayMemberBinding="{Binding Path=centerY}"/>
-                        <GridViewColumn Header="缺陷X(mm)" Width="120" DisplayMemberBinding="{Binding Path=CenterXmm}"/>
-                        <GridViewColumn  Header="缺陷Y(mm)" Width="120" DisplayMemberBinding="{Binding Path=CenterYmm}"/>
-                        <GridViewColumn  Header="缺陷直径(mm)" Width="120" DisplayMemberBinding="{Binding Path=Diametermm}" />
-                        <GridViewColumn  Header="缺陷面积(mm)" Width="120" DisplayMemberBinding="{Binding Path=Areamm}"/>
-                        <GridViewColumn Header="正矩形短边(mm)" Width="120" DisplayMemberBinding="{Binding Path=Dxmm}"/>
-                        <GridViewColumn  Header="正矩形长边(mm)" Width="120" DisplayMemberBinding="{Binding Path=Dymm}"/>
-                        <GridViewColumn  Header="斜矩形短边(mm)" Width="120" DisplayMemberBinding="{Binding Path= RectShortsideLengthmm}"/>
-                        <GridViewColumn  Header="斜矩形长边(mm)" Width="120" DisplayMemberBinding="{Binding Path=RectLongsideLengthmm}" />
-                        <GridViewColumn  Header="凸起面积" Width="100" DisplayMemberBinding="{Binding Path= ConvexArea}"/>
-                        <GridViewColumn  Header="缺陷个数" Width="100" DisplayMemberBinding="{Binding Path=blobCnt}"/>
-                        <GridViewColumn  Header="缺陷灰度" Width="300" DisplayMemberBinding="{Binding Path=ImageGray}"/>
-                        <GridViewColumn  Header="腐蚀blob平均灰度" Width="300" DisplayMemberBinding="{Binding Path=ImageErosionGray}"/>
-                        <GridViewColumn  Header="bolb最小灰度" Width="300" DisplayMemberBinding="{Binding Path=ImageMinGray}"/>
-                        <GridViewColumn  Header="bolb最大灰度" Width="300" DisplayMemberBinding="{Binding Path=ImageMaxGray}"/>
-                        <GridViewColumn  Header="多图平均灰度" Width="300" DisplayMemberBinding="{Binding Path=AverageGray}"/>
-                        <GridViewColumn  Header="点或线" Width="100" DisplayMemberBinding="{Binding Path=dotOrLine}"/>
+                        <GridViewColumn  Header="名称" Width="200"  DisplayMemberBinding="{Binding Path=Title}" />
+                        <GridViewColumn  Header="游戏版本" Width="100" DisplayMemberBinding="{Binding Path=Interface, StringFormat={}{0}}" />
+                        <GridViewColumn  Header="版本" Width="100" DisplayMemberBinding="{Binding Path=Version, StringFormat={}{0}}" />
+                        <GridViewColumn  Header="作者" Width="80"  DisplayMemberBinding="{Binding Path=Author}"/>
+                        <GridViewColumn  Header="简介" Width="260" DisplayMemberBinding="{Binding Path= Description}"/>
                     </GridView>
                 </ListView.View>
             </ListView>
